@@ -31,7 +31,7 @@ public class FirstItemWriter implements ItemWriter<Person> {
 		}
 
 		if (!items.isEmpty()) {
-			
+			personRepository.deleteAll();
 			personRepository.saveAll(items);
 			
 			List<Person> list = this.personService.getAll();

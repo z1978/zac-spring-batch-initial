@@ -49,14 +49,13 @@ public class ZacApplication {
 			System.out.println("致命的なエラーが発生しました。詳細はログを確認して下さい。");
 			System.exit(1);
 		}
-		LOGGER.info("Application main END==================================================");
-		LOGGER.info("Start time = [" + DF.format(new Date()) + "]");
+		System.out.println("Application main END==================================================");
 		LOGGER.info("End time = [" + DF.format(new Date()) + "]");
 		long endTime = System.currentTimeMillis();
 		LOGGER.info("Program running time = [" + (endTime - startTime) + "]ms");
 		System.out.println("Program running time = [" + (endTime - startTime) / 1000f + "]s");
 		LOGGER.info("Program running time = [" + (endTime - startTime) / 1000f + "]s");
-		LOGGER.info("Application main END==================================================");
+		System.out.println("Application main END==================================================");
 	}
 
 	@Bean

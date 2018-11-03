@@ -1,37 +1,45 @@
 package com.zac.batch.dto;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
+
 public class PersonDto {
 
-    private String lastName;
-    private String firstName;
+	@NotNull
+	@Range(min = 1, max = 10)
+	private String lastName;
+	@NotNull
+	@Range(min = 1, max = 10)
+	private String firstName;
 
-    public PersonDto() {
-    }
+	public PersonDto() {
+	}
 
-    public PersonDto(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+	public PersonDto(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    @Override
-    public String toString() {
-        return "firstName: " + firstName + ", lastName: " + lastName;
-    }
+	@Override
+	public String toString() {
+		return "firstName: " + firstName + ", lastName: " + lastName;
+	}
 
 }

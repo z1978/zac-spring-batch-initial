@@ -18,6 +18,10 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRepository;
 
+	public Person findById(int id) {
+		return personRepository.findById(id);
+	}
+
 	@Transactional(readOnly = true)
 	public List<Person> getAll() {
 		return personRepository.findAll();
@@ -61,7 +65,7 @@ public class PersonService {
 //		personRepository.deleteAll();
 //	}
 //
-    //@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
+	// @Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
 	@Transactional
 	public void createOne(Person person) {
 		personRepository.save(person);

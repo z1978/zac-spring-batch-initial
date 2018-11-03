@@ -9,6 +9,11 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 }
+plugins {
+	id 'groovy'
+	id 'idea'
+	id 'org.springframework.boot' version '1.5.7.RELEASE'
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -39,4 +44,9 @@ dependencies {
     // 检查参数
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.13.Final'
+    
+    // Spock
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+    testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4'
+    testRuntime 'cglib:cglib-nodep:3.2.4'
 }

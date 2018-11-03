@@ -105,6 +105,7 @@ public class FirstJobConfiguration {
 		return jobBuilderFactory.get(BatchConstants.FIRST_JOB_ID)
 				.repository(jobRepository)
 				.incrementer(new RunIdIncrementer())
+				.listener(jobListener)
 				.start(flow1)
                 .next(flow2)
 //				.listener(jobListener)
